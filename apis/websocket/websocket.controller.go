@@ -24,7 +24,7 @@ func handleWebsocket(c *websocket.Conn) {
 		if string(msg) == "start_recording" {
 			file, err := os.Create(fmt.Sprintf("./static/video/%d.webm", time.Now().Unix()))
 			if err != nil {
-				panic(err)
+				log.Println(err)
 			}
 			videoFile = file
 			c.WriteMessage(websocket.TextMessage, []byte("accepted_recording"))
@@ -33,7 +33,7 @@ func handleWebsocket(c *websocket.Conn) {
 		} else {
 			decodedBytes, err := base64.StdEncoding.DecodeString(string(msg))
 			if err != nil {
-				panic(err)
+				log.Println(err)
 			}
 			videoFile.Write(decodedBytes)
 		}
