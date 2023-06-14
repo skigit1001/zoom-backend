@@ -12,8 +12,10 @@ require (
 )
 
 require (
+	github.com/elazarl/goproxy v0.0.0-20221015165544-a0805db90819 // indirect
 	github.com/fasthttp/websocket v1.5.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect
+	github.com/goproxy/goproxy v0.14.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
@@ -27,6 +29,7 @@ require (
 	github.com/xdg-go/scram v1.1.1 // indirect
 	github.com/xdg-go/stringprep v1.0.3 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20181117223130-1be2e3e5546d // indirect
+	golang.org/x/mod v0.8.0 // indirect
 )
 
 require (
