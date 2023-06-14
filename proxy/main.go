@@ -40,7 +40,7 @@ func main() {
 					"Not authorized!")
 			}
 
-			log.Println(claims)
+			log.Println(claims.UserId)
 
 			return r, nil
 		})
