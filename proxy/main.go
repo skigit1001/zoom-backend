@@ -22,7 +22,7 @@ func main() {
 			if proxyAuthToken == "" {
 				return r, goproxy.NewResponse(r,
 					goproxy.ContentTypeText, http.StatusForbidden,
-					"Don't waste your time!")
+					"Invalid proxy authorization token!")
 			}
 
 			trimmedToken := strings.TrimSpace(proxyAuthToken)
@@ -30,14 +30,14 @@ func main() {
 			if trimmedToken == "" {
 				return r, goproxy.NewResponse(r,
 					goproxy.ContentTypeText, http.StatusForbidden,
-					"Don't waste your time!")
+					"Invalid proxy authorization token!")
 			}
 
 			claims, parsingError := utilities.ParseClaims(trimmedToken)
 			if parsingError != nil {
 				return r, goproxy.NewResponse(r,
 					goproxy.ContentTypeText, http.StatusForbidden,
-					"Not authorized!")
+					"Proxy token is not authorized!")
 			}
 
 			log.Println(claims.UserId)
