@@ -13,6 +13,8 @@ import (
 func main() {
 	proxy := goproxy.NewProxyHttpServer()
 	proxy.Verbose = false
+	proxy.KeepDestinationHeaders = true
+	proxy.KeepHeader = false
 
 	proxy.OnRequest().HandleConnect(goproxy.AlwaysMitm)
 	proxy.OnRequest().DoFunc(
