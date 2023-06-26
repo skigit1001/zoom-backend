@@ -12,7 +12,9 @@ import (
 // Authorize requests
 func Authorize(ctx *fiber.Ctx) error {
 	// get authorization header
-	rawToken := ctx.Get("Authorization")
+	// NOTE: the following header name must be identical with `AUTH_HEADER` in extension config module
+	rawToken := ctx.Get("Easymind-Authorization")
+
 	if rawToken == "" {
 		return utilities.Response(utilities.ResponseParams{
 			Ctx:    ctx,
