@@ -110,8 +110,10 @@ func signIn(ctx *fiber.Ctx) error {
 	return utilities.Response(utilities.ResponseParams{
 		Ctx: ctx,
 		Data: fiber.Map{
-			"token": token,
-			"user":  userRecord,
+			"token":         token,
+			"user":          userRecord,
+			"proxyUsername": "admin",
+			"proxyPassword": "admin",
 		},
 	})
 }
